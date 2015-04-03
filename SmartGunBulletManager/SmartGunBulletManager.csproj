@@ -56,11 +56,23 @@
     <Compile Include="MyControls\BlockButton.Designer.cs">
       <DependentUpon>BlockButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyControls\BodyMainMenu.cs">
+    <Compile Include="MyControls\MainMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MyControls\BodyMainMenu.Designer.cs">
-      <DependentUpon>BodyMainMenu.cs</DependentUpon>
+    <Compile Include="MyControls\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyControls\Main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyControls\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,8 +82,14 @@
     <EmbeddedResource Include="MyControls\BlockButton.resx">
       <DependentUpon>BlockButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyControls\BodyMainMenu.resx">
-      <DependentUpon>BodyMainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="MyControls\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyControls\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

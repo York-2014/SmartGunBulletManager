@@ -28,14 +28,19 @@ namespace SmartGunBulletManager
             //this.TopMost = true;
         }
 
-        private void timer_UpdateUI_Tick(object sender, EventArgs e)
+        public void Login(string user, string pwd)
         {
-            UpdateDateTime();
+            loginControl1.Hide();
+            main1.Show();
+            MessageBox.Show(pwd, user);
         }
 
-        private void UpdateDateTime()
+        private void timer_UpdateUI_Tick(object sender, EventArgs e)
         {
-            this.label_DateTime.Text = string.Format("当前时间：{0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (main1.Visible)
+            {
+                main1.UpdateDateTime();
+            }
         }
     }
 }

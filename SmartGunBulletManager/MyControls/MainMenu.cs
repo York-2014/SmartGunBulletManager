@@ -9,13 +9,16 @@ using System.Windows.Forms;
 
 namespace SmartGunBulletManager.MyControls
 {
-    public partial class BodyMainMenu : UserControl
+    public partial class MainMenu : UserControl
     {
-        public BodyMainMenu()
+        public MainMenu()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
+            SetStyle(ControlStyles.DoubleBuffer, true); //双缓冲
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            BackColor = Color.FromArgb(120, 40, 60, 82);
+            BackColor = Color.FromArgb(180, 40, 60, 82);
         }
     }
 }

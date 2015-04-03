@@ -1,6 +1,6 @@
 ﻿namespace SmartGunBulletManager.MyControls
 {
-    partial class BodyMainMenu
+    partial class MainMenu
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BodyMainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panel_BottomStateBar = new System.Windows.Forms.Panel();
             this.pictureBox_ServerState = new System.Windows.Forms.PictureBox();
             this.pictureBox_Network = new System.Windows.Forms.PictureBox();
@@ -50,6 +50,7 @@
             this.blockButton_BackGun = new SmartGunBulletManager.MyControls.BlockButton();
             this.blockButton_GetGun = new SmartGunBulletManager.MyControls.BlockButton();
             this.blockButton_View = new SmartGunBulletManager.MyControls.BlockButton();
+            this.blockButton_Exit = new SmartGunBulletManager.MyControls.BlockButton();
             this.panel_BottomStateBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ServerState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Network)).BeginInit();
@@ -310,10 +311,23 @@
             this.blockButton_View.Size = new System.Drawing.Size(240, 100);
             this.blockButton_View.TabIndex = 19;
             // 
-            // BodyMainMenu
+            // blockButton_Exit
+            // 
+            this.blockButton_Exit.BackColor = System.Drawing.Color.Lavender;
+            this.blockButton_Exit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.blockButton_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blockButton_Exit.Description = "退  出";
+            this.blockButton_Exit.Icon = ((System.Drawing.Image)(resources.GetObject("blockButton_Exit.Icon")));
+            this.blockButton_Exit.Location = new System.Drawing.Point(381, 353);
+            this.blockButton_Exit.Name = "blockButton_Exit";
+            this.blockButton_Exit.Size = new System.Drawing.Size(240, 100);
+            this.blockButton_Exit.TabIndex = 32;
+            // 
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.blockButton_Exit);
             this.Controls.Add(this.blockButton_Help);
             this.Controls.Add(this.label_CabinetCount);
             this.Controls.Add(this.pictureBox_Cabinet);
@@ -326,7 +340,7 @@
             this.Controls.Add(this.blockButton_BackGun);
             this.Controls.Add(this.blockButton_GetGun);
             this.Controls.Add(this.blockButton_View);
-            this.Name = "BodyMainMenu";
+            this.Name = "MainMenu";
             this.Size = new System.Drawing.Size(1000, 560);
             this.panel_BottomStateBar.ResumeLayout(false);
             this.panel_BottomStateBar.PerformLayout();
@@ -366,5 +380,6 @@
         private System.Windows.Forms.PictureBox pictureBox_Cabinet;
         private System.Windows.Forms.Label label_CabinetCount;
         private BlockButton blockButton_Help;
+        private BlockButton blockButton_Exit;
     }
 }

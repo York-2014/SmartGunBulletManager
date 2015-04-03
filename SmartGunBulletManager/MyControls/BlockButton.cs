@@ -12,19 +12,6 @@ namespace SmartGunBulletManager.MyControls
     public partial class BlockButton : UserControl
     {
         #region 控件自定义属性
-        //private Color _BackGroundColor = Color.White;
-        //[CategoryAttribute("自定义属性")]
-        //[DescriptionAttribute("设置控件的背景颜色")]
-        //public Color BackGroundColor
-        //{
-        //    set
-        //    {
-        //        _BackGroundColor = value;
-        //        this.BackColor = _BackGroundColor;
-        //    }
-        //    get { return _BackGroundColor; }
-        //}
-
         private string _Description = "文字描述";
         [CategoryAttribute("自定义属性")]
         [DescriptionAttribute("设置控件的文字描述")]
@@ -55,11 +42,25 @@ namespace SmartGunBulletManager.MyControls
         public BlockButton()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
+            SetStyle(ControlStyles.DoubleBuffer, true); //双缓冲
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
 
         private void BlockButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("当前点击：{0}",_Description), "智能枪弹柜管理系统", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (this.Name == "blockButton_Exit")
+            {
+                if (DialogResult.Yes == MessageBox.Show("确定要退出程序吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    Application.Exit();
+                }
+            }
+            else
+            {
+                MessageBox.Show(string.Format("当前点击：{0}", _Description), "智能枪弹柜管理系统", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace SmartGunBulletManager.MyControls
+namespace SmartGunBulletManager.UserControls
 {
-    public partial class BlockButton : UserControl
+    public partial class BlockButton : BasePanel
     {
-        #region 控件自定义属性
+        #region 私有变量
+        private Color btnBackColor;
+        #endregion
+
+        #region 控件的自定义属性
         private string _Description = "文字描述";
         [CategoryAttribute("自定义属性")]
         [DescriptionAttribute("设置控件的文字描述")]
@@ -39,28 +39,41 @@ namespace SmartGunBulletManager.MyControls
         }
         #endregion
 
+        #region 控件的自定义事件
+        public delegate void EventHandler(object sender, EventArgs e);
+        public event EventHandler BlockClick;
+        protected virtual void OnBlockClick(EventArgs e)
+        {
+            if (BlockClick != null)
+            {
+                BlockClick(this, e);
+            }
+        }
+        #endregion
+
+        #region 构造函数
         public BlockButton()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
-            SetStyle(ControlStyles.DoubleBuffer, true); //双缓冲
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+        }
+        #endregion
+
+        #region 控件事件
+        private void BlockButton_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnBackColor = this.BackColor;
+            this.BackColor = Color.White;
+        }
+
+        private void BlockButton_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.BackColor = btnBackColor;
         }
 
         private void BlockButton_Click(object sender, EventArgs e)
         {
-            if (this.Name == "blockButton_Exit")
-            {
-                if (DialogResult.Yes == MessageBox.Show("确定要退出程序吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    Application.Exit();
-                }
-            }
-            else
-            {
-                MessageBox.Show(string.Format("当前点击：{0}", _Description), "智能枪弹柜管理系统", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            this.OnBlockClick(e);
         }
+        #endregion
     }
 }

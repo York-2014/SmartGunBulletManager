@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager
+﻿namespace SmartGunBulletManager.Forms
 {
     partial class MainForm
     {
@@ -31,21 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timer_UpdateUI = new System.Windows.Forms.Timer(this.components);
-            this.loginControl1 = new SmartGunBulletManager.MyControls.LoginControl();
-            this.main1 = new SmartGunBulletManager.MyControls.Main();
+            this.main1 = new SmartGunBulletManager.UserControls.MainFrame();
+            this.loginControl1 = new SmartGunBulletManager.UserControls.LoginControl();
             this.SuspendLayout();
             // 
             // timer_UpdateUI
             // 
             this.timer_UpdateUI.Tick += new System.EventHandler(this.timer_UpdateUI_Tick);
-            // 
-            // loginControl1
-            // 
-            this.loginControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(82)))));
-            this.loginControl1.Location = new System.Drawing.Point(219, 207);
-            this.loginControl1.Name = "loginControl1";
-            this.loginControl1.Size = new System.Drawing.Size(586, 355);
-            this.loginControl1.TabIndex = 1;
             // 
             // main1
             // 
@@ -55,6 +47,14 @@
             this.main1.Size = new System.Drawing.Size(1024, 768);
             this.main1.TabIndex = 0;
             this.main1.Visible = false;
+            // 
+            // loginControl1
+            // 
+            this.loginControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(82)))));
+            this.loginControl1.Location = new System.Drawing.Point(219, 194);
+            this.loginControl1.Name = "loginControl1";
+            this.loginControl1.Size = new System.Drawing.Size(586, 380);
+            this.loginControl1.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -77,9 +77,9 @@
 
         #endregion
 
-        private MyControls.Main main1;
-        private MyControls.LoginControl loginControl1;
+        private UserControls.MainFrame main1;
         private System.Windows.Forms.Timer timer_UpdateUI;
+        private UserControls.LoginControl loginControl1;
 
     }
 }

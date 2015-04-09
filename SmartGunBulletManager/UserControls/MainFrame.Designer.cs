@@ -1,6 +1,6 @@
-﻿namespace SmartGunBulletManager.MyControls
+﻿namespace SmartGunBulletManager.UserControls
 {
-    partial class Main
+    partial class MainFrame
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrame));
             this.panel_MiddleStateBar = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -36,18 +36,18 @@
             this.label_GunCount = new System.Windows.Forms.Label();
             this.label_Operator = new System.Windows.Forms.Label();
             this.label_DateTime = new System.Windows.Forms.Label();
-            this.pictureBox_Top = new System.Windows.Forms.PictureBox();
-            this.label_SystemName = new System.Windows.Forms.Label();
             this.panel_Top = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.label_SystemName = new System.Windows.Forms.Label();
+            this.pictureBox_Top = new System.Windows.Forms.PictureBox();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.bodyContent_Main = new SmartGunBulletManager.MyControls.MainMenu();
+            this.bodyContent_Main = new SmartGunBulletManager.UserControls.Dashboard();
             this.panel_MiddleStateBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Top)).BeginInit();
             this.panel_Top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Top)).BeginInit();
             this.panel_Body.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,27 +131,6 @@
             this.label_DateTime.TabIndex = 0;
             this.label_DateTime.Text = "当前时间：";
             // 
-            // pictureBox_Top
-            // 
-            this.pictureBox_Top.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Top.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox_Top.Name = "pictureBox_Top";
-            this.pictureBox_Top.Size = new System.Drawing.Size(1024, 150);
-            this.pictureBox_Top.TabIndex = 0;
-            this.pictureBox_Top.TabStop = false;
-            // 
-            // label_SystemName
-            // 
-            this.label_SystemName.AutoSize = true;
-            this.label_SystemName.BackColor = System.Drawing.Color.Transparent;
-            this.label_SystemName.Font = new System.Drawing.Font("宋体", 25F, System.Drawing.FontStyle.Bold);
-            this.label_SystemName.ForeColor = System.Drawing.Color.White;
-            this.label_SystemName.Location = new System.Drawing.Point(45, 58);
-            this.label_SystemName.Name = "label_SystemName";
-            this.label_SystemName.Size = new System.Drawing.Size(330, 34);
-            this.label_SystemName.TabIndex = 2;
-            this.label_SystemName.Text = "智能枪弹柜管理系统";
-            // 
             // panel_Top
             // 
             this.panel_Top.BackColor = System.Drawing.Color.Transparent;
@@ -174,6 +153,27 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "v1.0 Beta";
             // 
+            // label_SystemName
+            // 
+            this.label_SystemName.AutoSize = true;
+            this.label_SystemName.BackColor = System.Drawing.Color.Transparent;
+            this.label_SystemName.Font = new System.Drawing.Font("宋体", 25F, System.Drawing.FontStyle.Bold);
+            this.label_SystemName.ForeColor = System.Drawing.Color.White;
+            this.label_SystemName.Location = new System.Drawing.Point(45, 58);
+            this.label_SystemName.Name = "label_SystemName";
+            this.label_SystemName.Size = new System.Drawing.Size(330, 34);
+            this.label_SystemName.TabIndex = 2;
+            this.label_SystemName.Text = "智能枪弹柜管理系统";
+            // 
+            // pictureBox_Top
+            // 
+            this.pictureBox_Top.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_Top.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_Top.Name = "pictureBox_Top";
+            this.pictureBox_Top.Size = new System.Drawing.Size(1024, 150);
+            this.pictureBox_Top.TabIndex = 0;
+            this.pictureBox_Top.TabStop = false;
+            // 
             // panel_Body
             // 
             this.panel_Body.BackColor = System.Drawing.Color.Transparent;
@@ -191,7 +191,7 @@
             this.bodyContent_Main.Size = new System.Drawing.Size(1000, 560);
             this.bodyContent_Main.TabIndex = 5;
             // 
-            // Main
+            // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,16 +199,16 @@
             this.Controls.Add(this.panel_MiddleStateBar);
             this.Controls.Add(this.panel_Top);
             this.Controls.Add(this.panel_Body);
-            this.Name = "Main";
+            this.Name = "MainFrame";
             this.Size = new System.Drawing.Size(1024, 768);
             this.panel_MiddleStateBar.ResumeLayout(false);
             this.panel_MiddleStateBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Top)).EndInit();
             this.panel_Top.ResumeLayout(false);
             this.panel_Top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Top)).EndInit();
             this.panel_Body.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -228,6 +228,6 @@
         private System.Windows.Forms.Panel panel_Top;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Body;
-        private MainMenu bodyContent_Main;
+        private Dashboard bodyContent_Main;
     }
 }

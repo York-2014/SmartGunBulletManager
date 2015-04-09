@@ -1,6 +1,6 @@
-﻿namespace SmartGunBulletManager.MyControls
+﻿namespace SmartGunBulletManager.UserControls
 {
-    partial class MainMenu
+    partial class Dashboard
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel_BottomStateBar = new System.Windows.Forms.Panel();
             this.pictureBox_ServerState = new System.Windows.Forms.PictureBox();
             this.pictureBox_Network = new System.Windows.Forms.PictureBox();
@@ -43,14 +43,14 @@
             this.label_LockStateComment = new System.Windows.Forms.Label();
             this.pictureBox_Cabinet = new System.Windows.Forms.PictureBox();
             this.label_CabinetCount = new System.Windows.Forms.Label();
-            this.blockButton_Help = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_Records = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_SystemSettings = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_DutyTable = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_BackGun = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_GetGun = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_View = new SmartGunBulletManager.MyControls.BlockButton();
-            this.blockButton_Exit = new SmartGunBulletManager.MyControls.BlockButton();
+            this.blockButton_Help = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_Records = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_SystemSettings = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_DutyTable = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_BackGun = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_GetGun = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_View = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_Exit = new SmartGunBulletManager.UserControls.BlockButton();
             this.panel_BottomStateBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ServerState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Network)).BeginInit();
@@ -286,6 +286,7 @@
             this.blockButton_BackGun.Name = "blockButton_BackGun";
             this.blockButton_BackGun.Size = new System.Drawing.Size(240, 100);
             this.blockButton_BackGun.TabIndex = 21;
+            this.blockButton_BackGun.BlockClick += new SmartGunBulletManager.UserControls.BlockButton.EventHandler(this.blockButton_BackGun_Click);
             // 
             // blockButton_GetGun
             // 
@@ -298,6 +299,7 @@
             this.blockButton_GetGun.Name = "blockButton_GetGun";
             this.blockButton_GetGun.Size = new System.Drawing.Size(240, 100);
             this.blockButton_GetGun.TabIndex = 20;
+            this.blockButton_GetGun.BlockClick += new SmartGunBulletManager.UserControls.BlockButton.EventHandler(this.blockButton_GetGun_Click);
             // 
             // blockButton_View
             // 
@@ -323,7 +325,7 @@
             this.blockButton_Exit.Size = new System.Drawing.Size(240, 100);
             this.blockButton_Exit.TabIndex = 32;
             // 
-            // MainMenu
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -340,7 +342,7 @@
             this.Controls.Add(this.blockButton_BackGun);
             this.Controls.Add(this.blockButton_GetGun);
             this.Controls.Add(this.blockButton_View);
-            this.Name = "MainMenu";
+            this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(1000, 560);
             this.panel_BottomStateBar.ResumeLayout(false);
             this.panel_BottomStateBar.PerformLayout();

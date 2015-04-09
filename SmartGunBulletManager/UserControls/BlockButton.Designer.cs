@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager.MyControls
+﻿namespace SmartGunBulletManager.UserControls
 {
     partial class BlockButton
     {
@@ -47,6 +47,8 @@
             this.label_Description.TabIndex = 0;
             this.label_Description.Text = "文字描述";
             this.label_Description.Click += new System.EventHandler(this.BlockButton_Click);
+            this.label_Description.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BlockButton_MouseDown);
+            this.label_Description.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BlockButton_MouseUp);
             // 
             // pictureBox_Icon
             // 
@@ -60,6 +62,8 @@
             this.pictureBox_Icon.TabIndex = 1;
             this.pictureBox_Icon.TabStop = false;
             this.pictureBox_Icon.Click += new System.EventHandler(this.BlockButton_Click);
+            this.pictureBox_Icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BlockButton_MouseDown);
+            this.pictureBox_Icon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BlockButton_MouseUp);
             // 
             // BlockButton
             // 
@@ -73,6 +77,8 @@
             this.Name = "BlockButton";
             this.Size = new System.Drawing.Size(238, 98);
             this.Click += new System.EventHandler(this.BlockButton_Click);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BlockButton_MouseDown);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BlockButton_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Icon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

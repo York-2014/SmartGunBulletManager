@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace SmartGunBulletManager.MyControls
+namespace SmartGunBulletManager.UserControls
 {
-    public partial class MainMenu : UserControl
+    public class BasePanel : UserControl
     {
-        public MainMenu()
+        public BasePanel()
         {
-            InitializeComponent();
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
             SetStyle(ControlStyles.DoubleBuffer, true); //双缓冲

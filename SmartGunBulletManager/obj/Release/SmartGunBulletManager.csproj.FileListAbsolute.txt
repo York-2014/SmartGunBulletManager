@@ -2,10 +2,10 @@ F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sm
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\SmartGunBulletManager.pdb
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MainForm.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.BlockButton.resources
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.BodyMainMenu.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.Properties.Resources.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.csproj.GenerateResource.Cache
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.exe
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.pdb
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.LoginControl.resources
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.Main.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.Dashboard.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.MainFrame.resources

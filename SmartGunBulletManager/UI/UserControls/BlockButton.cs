@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SmartGunBulletManager.UserControls
+namespace SmartGunBulletManager.UI.UserControls
 {
     public partial class BlockButton : BasePanel
     {
@@ -62,7 +62,7 @@ namespace SmartGunBulletManager.UserControls
         private void BlockButton_MouseDown(object sender, MouseEventArgs e)
         {
             btnBackColor = this.BackColor;
-            this.BackColor = Color.White;
+            this.BackColor = Color.Red;
         }
 
         private void BlockButton_MouseUp(object sender, MouseEventArgs e)

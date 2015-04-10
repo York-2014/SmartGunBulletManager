@@ -1,5 +1,7 @@
-﻿using SmartGunBulletManager.IDAL;
-using SmartGunBulletManager.Utils;
+﻿using SmartGunBulletManager.BLL;
+using SmartGunBulletManager.Entity;
+using SmartGunBulletManager.IDAL;
+using SmartGunBulletManager.Utils.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,14 +14,15 @@ namespace SmartGunBulletManager.DAL
     public class User : IUser
     {
         private string strDataSource = string.Empty;
+
         public User(string dataSourceString)
         {
             this.strDataSource = dataSourceString;
         }
 
-        public bool CheckLogin(string user, string pwd)
+        public UserEntity CheckLoginByPwd(BLL.User.RoleType userType, string userNumber, string pwd)
         {
-            bool result = false;
+            UserEntity result = null;
             using (SQLiteConnection conn = new SQLiteConnection(strDataSource))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand())
@@ -29,20 +32,37 @@ namespace SmartGunBulletManager.DAL
                     SQLiteHelper sh = new SQLiteHelper(cmd);
                     List<SQLiteParameter> lstParamerters = new List<SQLiteParameter>();
                     SQLiteParameter sqliteParameter = new SQLiteParameter();
-                    sqliteParameter.ParameterName = "@user";
-                    sqliteParameter.DbType = DbType.String;
-                    sqliteParameter.Value = user;
+                    sqliteParameter.ParameterName = "@RoleType";
+                    sqliteParameter.DbType = DbType.Int32;
+                    sqliteParameter.Value = userType;
                     lstParamerters.Add(sqliteParameter);
                     sqliteParameter = new SQLiteParameter();
-                    sqliteParameter.ParameterName = "@pwd";
+                    sqliteParameter.ParameterName = "@UserNumber";
                     sqliteParameter.DbType = DbType.String;
-                    sqliteParameter.Value = pwd;
+                    sqliteParameter.Value = userNumber;
                     lstParamerters.Add(sqliteParameter);
-                    DataTable dt = sh.Select("Select Count(id) From [user] where name=@user and password=@pwd;", lstParamerters);
-                    result = Convert.ToBoolean(dt.Rows[0][0]);
+                    sqliteParameter = new SQLiteParameter();
+                    sqliteParameter.ParameterName = "@PWD";
+                    sqliteParameter.DbType = DbType.String;
+                    sqliteParameter.Value = Utils.Common.GetMd5Hash(pwd);
+                    lstParamerters.Add(sqliteParameter);
+                    DataTable dt = sh.Select("SELECT * FROM [user] WHERE roleid=@RoleType AND usernumber=@UserNumber AND password=@PWD;", lstParamerters);
+                    //List<UserEntity> lstUser = new List<UserEntity>();
+                    //lstUser = Utils.DataTableUtility.ToList<UserEntity>(dt) as List<UserEntity>;
+                    if (dt.Rows.Count == 1)
+                    {
+                        result = new UserEntity();
+                        result = Utils.DataTableUtility.ToEntity<UserEntity>(dt.Rows[0]);
+                    }
                     conn.Close();
                 }
             }
+            return result;
+        }
+
+        public UserEntity CheckLoginByFingerprint(BLL.User.RoleType userType, string user, object fingerprintInfo)
+        {
+            UserEntity result = new UserEntity();
             return result;
         }
     }

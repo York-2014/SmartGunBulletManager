@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager.UserControls
+﻿namespace SmartGunBulletManager.UI.UserControls
 {
     partial class Dashboard
     {
@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            this.pictureBox_LockScreen = new System.Windows.Forms.PictureBox();
+            this.label_CabinetCount = new System.Windows.Forms.Label();
+            this.pictureBox_Cabinet = new System.Windows.Forms.PictureBox();
+            this.label_LockStateComment = new System.Windows.Forms.Label();
+            this.pictureBox_LockState = new System.Windows.Forms.PictureBox();
             this.panel_BottomStateBar = new System.Windows.Forms.Panel();
             this.pictureBox_ServerState = new System.Windows.Forms.PictureBox();
             this.pictureBox_Network = new System.Windows.Forms.PictureBox();
@@ -39,18 +44,17 @@
             this.pictureBox_wd = new System.Windows.Forms.PictureBox();
             this.label_jjnd = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox_LockState = new System.Windows.Forms.PictureBox();
-            this.label_LockStateComment = new System.Windows.Forms.Label();
-            this.pictureBox_Cabinet = new System.Windows.Forms.PictureBox();
-            this.label_CabinetCount = new System.Windows.Forms.Label();
-            this.blockButton_Help = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_Records = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_SystemSettings = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_DutyTable = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_BackGun = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_GetGun = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_View = new SmartGunBulletManager.UserControls.BlockButton();
-            this.blockButton_Exit = new SmartGunBulletManager.UserControls.BlockButton();
+            this.blockButton_Exit = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_Help = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_Records = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_SystemSettings = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_DutyTable = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_BackGun = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_GetGun = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            this.blockButton_View = new SmartGunBulletManager.UI.UserControls.BlockButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LockScreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cabinet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LockState)).BeginInit();
             this.panel_BottomStateBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ServerState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Network)).BeginInit();
@@ -58,9 +62,66 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_sd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_wd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LockState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cabinet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox_LockScreen
+            // 
+            this.pictureBox_LockScreen.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_LockScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_LockScreen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_LockScreen.Image")));
+            this.pictureBox_LockScreen.Location = new System.Drawing.Point(961, 3);
+            this.pictureBox_LockScreen.Name = "pictureBox_LockScreen";
+            this.pictureBox_LockScreen.Size = new System.Drawing.Size(36, 32);
+            this.pictureBox_LockScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_LockScreen.TabIndex = 33;
+            this.pictureBox_LockScreen.TabStop = false;
+            this.pictureBox_LockScreen.Click += new System.EventHandler(this.pictureBox_LockScreen_Click);
+            // 
+            // label_CabinetCount
+            // 
+            this.label_CabinetCount.AutoSize = true;
+            this.label_CabinetCount.BackColor = System.Drawing.Color.Transparent;
+            this.label_CabinetCount.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_CabinetCount.ForeColor = System.Drawing.Color.Yellow;
+            this.label_CabinetCount.Location = new System.Drawing.Point(59, 24);
+            this.label_CabinetCount.Name = "label_CabinetCount";
+            this.label_CabinetCount.Size = new System.Drawing.Size(82, 19);
+            this.label_CabinetCount.TabIndex = 30;
+            this.label_CabinetCount.Text = "枪柜数量：2";
+            // 
+            // pictureBox_Cabinet
+            // 
+            this.pictureBox_Cabinet.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_Cabinet.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Cabinet.Image")));
+            this.pictureBox_Cabinet.Location = new System.Drawing.Point(21, 15);
+            this.pictureBox_Cabinet.Name = "pictureBox_Cabinet";
+            this.pictureBox_Cabinet.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_Cabinet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Cabinet.TabIndex = 29;
+            this.pictureBox_Cabinet.TabStop = false;
+            // 
+            // label_LockStateComment
+            // 
+            this.label_LockStateComment.AutoSize = true;
+            this.label_LockStateComment.BackColor = System.Drawing.Color.Transparent;
+            this.label_LockStateComment.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_LockStateComment.ForeColor = System.Drawing.Color.Yellow;
+            this.label_LockStateComment.Location = new System.Drawing.Point(217, 24);
+            this.label_LockStateComment.Name = "label_LockStateComment";
+            this.label_LockStateComment.Size = new System.Drawing.Size(139, 19);
+            this.label_LockStateComment.TabIndex = 28;
+            this.label_LockStateComment.Text = "柜门状态：已全部关闭";
+            // 
+            // pictureBox_LockState
+            // 
+            this.pictureBox_LockState.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_LockState.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_LockState.Image")));
+            this.pictureBox_LockState.Location = new System.Drawing.Point(179, 15);
+            this.pictureBox_LockState.Name = "pictureBox_LockState";
+            this.pictureBox_LockState.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox_LockState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_LockState.TabIndex = 27;
+            this.pictureBox_LockState.TabStop = false;
             // 
             // panel_BottomStateBar
             // 
@@ -181,51 +242,17 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "湿度：0 %RH";
             // 
-            // pictureBox_LockState
+            // blockButton_Exit
             // 
-            this.pictureBox_LockState.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_LockState.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_LockState.Image")));
-            this.pictureBox_LockState.Location = new System.Drawing.Point(179, 15);
-            this.pictureBox_LockState.Name = "pictureBox_LockState";
-            this.pictureBox_LockState.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox_LockState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_LockState.TabIndex = 27;
-            this.pictureBox_LockState.TabStop = false;
-            // 
-            // label_LockStateComment
-            // 
-            this.label_LockStateComment.AutoSize = true;
-            this.label_LockStateComment.BackColor = System.Drawing.Color.Transparent;
-            this.label_LockStateComment.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_LockStateComment.ForeColor = System.Drawing.Color.Yellow;
-            this.label_LockStateComment.Location = new System.Drawing.Point(217, 24);
-            this.label_LockStateComment.Name = "label_LockStateComment";
-            this.label_LockStateComment.Size = new System.Drawing.Size(139, 19);
-            this.label_LockStateComment.TabIndex = 28;
-            this.label_LockStateComment.Text = "柜门状态：已全部关闭";
-            // 
-            // pictureBox_Cabinet
-            // 
-            this.pictureBox_Cabinet.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Cabinet.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Cabinet.Image")));
-            this.pictureBox_Cabinet.Location = new System.Drawing.Point(21, 15);
-            this.pictureBox_Cabinet.Name = "pictureBox_Cabinet";
-            this.pictureBox_Cabinet.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox_Cabinet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Cabinet.TabIndex = 29;
-            this.pictureBox_Cabinet.TabStop = false;
-            // 
-            // label_CabinetCount
-            // 
-            this.label_CabinetCount.AutoSize = true;
-            this.label_CabinetCount.BackColor = System.Drawing.Color.Transparent;
-            this.label_CabinetCount.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_CabinetCount.ForeColor = System.Drawing.Color.Yellow;
-            this.label_CabinetCount.Location = new System.Drawing.Point(59, 24);
-            this.label_CabinetCount.Name = "label_CabinetCount";
-            this.label_CabinetCount.Size = new System.Drawing.Size(82, 19);
-            this.label_CabinetCount.TabIndex = 30;
-            this.label_CabinetCount.Text = "枪柜数量：2";
+            this.blockButton_Exit.BackColor = System.Drawing.Color.Lavender;
+            this.blockButton_Exit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.blockButton_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blockButton_Exit.Description = "退  出";
+            this.blockButton_Exit.Icon = ((System.Drawing.Image)(resources.GetObject("blockButton_Exit.Icon")));
+            this.blockButton_Exit.Location = new System.Drawing.Point(381, 353);
+            this.blockButton_Exit.Name = "blockButton_Exit";
+            this.blockButton_Exit.Size = new System.Drawing.Size(240, 100);
+            this.blockButton_Exit.TabIndex = 32;
             // 
             // blockButton_Help
             // 
@@ -286,7 +313,7 @@
             this.blockButton_BackGun.Name = "blockButton_BackGun";
             this.blockButton_BackGun.Size = new System.Drawing.Size(240, 100);
             this.blockButton_BackGun.TabIndex = 21;
-            this.blockButton_BackGun.BlockClick += new SmartGunBulletManager.UserControls.BlockButton.EventHandler(this.blockButton_BackGun_Click);
+            this.blockButton_BackGun.BlockClick += new SmartGunBulletManager.UI.UserControls.BlockButton.EventHandler(this.blockButton_BackGun_Click);
             // 
             // blockButton_GetGun
             // 
@@ -299,7 +326,7 @@
             this.blockButton_GetGun.Name = "blockButton_GetGun";
             this.blockButton_GetGun.Size = new System.Drawing.Size(240, 100);
             this.blockButton_GetGun.TabIndex = 20;
-            this.blockButton_GetGun.BlockClick += new SmartGunBulletManager.UserControls.BlockButton.EventHandler(this.blockButton_GetGun_Click);
+            this.blockButton_GetGun.BlockClick += new SmartGunBulletManager.UI.UserControls.BlockButton.EventHandler(this.blockButton_GetGun_Click);
             // 
             // blockButton_View
             // 
@@ -313,22 +340,11 @@
             this.blockButton_View.Size = new System.Drawing.Size(240, 100);
             this.blockButton_View.TabIndex = 19;
             // 
-            // blockButton_Exit
-            // 
-            this.blockButton_Exit.BackColor = System.Drawing.Color.Lavender;
-            this.blockButton_Exit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.blockButton_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.blockButton_Exit.Description = "退  出";
-            this.blockButton_Exit.Icon = ((System.Drawing.Image)(resources.GetObject("blockButton_Exit.Icon")));
-            this.blockButton_Exit.Location = new System.Drawing.Point(381, 353);
-            this.blockButton_Exit.Name = "blockButton_Exit";
-            this.blockButton_Exit.Size = new System.Drawing.Size(240, 100);
-            this.blockButton_Exit.TabIndex = 32;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox_LockScreen);
             this.Controls.Add(this.blockButton_Exit);
             this.Controls.Add(this.blockButton_Help);
             this.Controls.Add(this.label_CabinetCount);
@@ -344,6 +360,9 @@
             this.Controls.Add(this.blockButton_View);
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(1000, 560);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LockScreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cabinet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LockState)).EndInit();
             this.panel_BottomStateBar.ResumeLayout(false);
             this.panel_BottomStateBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_ServerState)).EndInit();
@@ -352,8 +371,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_sd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_wd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_LockState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Cabinet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +400,6 @@
         private System.Windows.Forms.Label label_CabinetCount;
         private BlockButton blockButton_Help;
         private BlockButton blockButton_Exit;
+        private System.Windows.Forms.PictureBox pictureBox_LockScreen;
     }
 }

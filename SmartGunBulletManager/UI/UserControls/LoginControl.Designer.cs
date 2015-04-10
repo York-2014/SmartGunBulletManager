@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager.UserControls
+﻿namespace SmartGunBulletManager.UI.UserControls
 {
     partial class LoginControl
     {
@@ -32,12 +32,12 @@
             this.label_Fingerprint = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_User = new System.Windows.Forms.TextBox();
+            this.textBox_UserNumber = new System.Windows.Forms.TextBox();
             this.label_Password = new System.Windows.Forms.Label();
             this.label_Admin = new System.Windows.Forms.Label();
             this.label_Holder = new System.Windows.Forms.Label();
             this.label_Operator = new System.Windows.Forms.Label();
-            this.label_Hint = new System.Windows.Forms.Label();
+            this.label_Description = new System.Windows.Forms.Label();
             this.textBox_Pwd = new System.Windows.Forms.TextBox();
             this.label_ProgramName = new System.Windows.Forms.Label();
             this.panel_RoleType = new System.Windows.Forms.Panel();
@@ -58,7 +58,8 @@
             this.label_Fingerprint.Location = new System.Drawing.Point(8, 0);
             this.label_Fingerprint.Name = "label_Fingerprint";
             this.label_Fingerprint.Size = new System.Drawing.Size(93, 38);
-            this.label_Fingerprint.TabIndex = 14;
+            this.label_Fingerprint.TabIndex = 2;
+            this.label_Fingerprint.Tag = "false";
             this.label_Fingerprint.Text = "指纹验证";
             this.label_Fingerprint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Fingerprint.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label_Fingerprint_MouseDown);
@@ -88,14 +89,14 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "人员编号：";
             // 
-            // textBox_User
+            // textBox_UserNumber
             // 
-            this.textBox_User.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_User.Font = new System.Drawing.Font("宋体", 20F);
-            this.textBox_User.Location = new System.Drawing.Point(190, 212);
-            this.textBox_User.Name = "textBox_User";
-            this.textBox_User.Size = new System.Drawing.Size(200, 38);
-            this.textBox_User.TabIndex = 11;
+            this.textBox_UserNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_UserNumber.Font = new System.Drawing.Font("宋体", 20F);
+            this.textBox_UserNumber.Location = new System.Drawing.Point(190, 212);
+            this.textBox_UserNumber.Name = "textBox_UserNumber";
+            this.textBox_UserNumber.Size = new System.Drawing.Size(200, 38);
+            this.textBox_UserNumber.TabIndex = 0;
             // 
             // label_Password
             // 
@@ -107,7 +108,8 @@
             this.label_Password.Location = new System.Drawing.Point(8, 66);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(93, 38);
-            this.label_Password.TabIndex = 10;
+            this.label_Password.TabIndex = 3;
+            this.label_Password.Tag = "true";
             this.label_Password.Text = "密码验证";
             this.label_Password.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Password.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label_Password_MouseDown);
@@ -123,7 +125,8 @@
             this.label_Admin.Location = new System.Drawing.Point(339, 23);
             this.label_Admin.Name = "label_Admin";
             this.label_Admin.Size = new System.Drawing.Size(110, 40);
-            this.label_Admin.TabIndex = 9;
+            this.label_Admin.TabIndex = 6;
+            this.label_Admin.Tag = "Admin";
             this.label_Admin.Text = "管理员";
             this.label_Admin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Admin.Click += new System.EventHandler(this.label_Admin_Click);
@@ -138,7 +141,8 @@
             this.label_Holder.Location = new System.Drawing.Point(190, 23);
             this.label_Holder.Name = "label_Holder";
             this.label_Holder.Size = new System.Drawing.Size(110, 40);
-            this.label_Holder.TabIndex = 8;
+            this.label_Holder.TabIndex = 5;
+            this.label_Holder.Tag = "Holder";
             this.label_Holder.Text = "持枪人";
             this.label_Holder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Holder.Click += new System.EventHandler(this.label_Holder_Click);
@@ -153,22 +157,23 @@
             this.label_Operator.Location = new System.Drawing.Point(41, 23);
             this.label_Operator.Name = "label_Operator";
             this.label_Operator.Size = new System.Drawing.Size(110, 40);
-            this.label_Operator.TabIndex = 7;
+            this.label_Operator.TabIndex = 4;
+            this.label_Operator.Tag = "Operator";
             this.label_Operator.Text = "值班员";
             this.label_Operator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Operator.Click += new System.EventHandler(this.label_Operator_Click);
             // 
-            // label_Hint
+            // label_Description
             // 
-            this.label_Hint.AutoSize = true;
-            this.label_Hint.BackColor = System.Drawing.Color.Transparent;
-            this.label_Hint.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Hint.ForeColor = System.Drawing.Color.Yellow;
-            this.label_Hint.Location = new System.Drawing.Point(161, 91);
-            this.label_Hint.Name = "label_Hint";
-            this.label_Hint.Size = new System.Drawing.Size(264, 28);
-            this.label_Hint.TabIndex = 6;
-            this.label_Hint.Text = "请选择您的身份进入系统！";
+            this.label_Description.BackColor = System.Drawing.Color.Transparent;
+            this.label_Description.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Description.ForeColor = System.Drawing.Color.Yellow;
+            this.label_Description.Location = new System.Drawing.Point(6, 91);
+            this.label_Description.Name = "label_Description";
+            this.label_Description.Size = new System.Drawing.Size(577, 28);
+            this.label_Description.TabIndex = 6;
+            this.label_Description.Text = "请选择您的身份进入系统！";
+            this.label_Description.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_Pwd
             // 
@@ -178,7 +183,7 @@
             this.textBox_Pwd.Name = "textBox_Pwd";
             this.textBox_Pwd.PasswordChar = '*';
             this.textBox_Pwd.Size = new System.Drawing.Size(200, 38);
-            this.textBox_Pwd.TabIndex = 5;
+            this.textBox_Pwd.TabIndex = 1;
             // 
             // label_ProgramName
             // 
@@ -186,7 +191,7 @@
             this.label_ProgramName.BackColor = System.Drawing.Color.Transparent;
             this.label_ProgramName.Font = new System.Drawing.Font("宋体", 25F, System.Drawing.FontStyle.Bold);
             this.label_ProgramName.ForeColor = System.Drawing.Color.White;
-            this.label_ProgramName.Location = new System.Drawing.Point(128, 39);
+            this.label_ProgramName.Location = new System.Drawing.Point(128, 37);
             this.label_ProgramName.Name = "label_ProgramName";
             this.label_ProgramName.Size = new System.Drawing.Size(330, 34);
             this.label_ProgramName.TabIndex = 4;
@@ -220,13 +225,12 @@
             // 
             // label_Copyright
             // 
-            this.label_Copyright.AutoSize = true;
             this.label_Copyright.BackColor = System.Drawing.Color.Transparent;
-            this.label_Copyright.Font = new System.Drawing.Font("微软雅黑", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Copyright.Font = new System.Drawing.Font("微软雅黑", 8.25F);
             this.label_Copyright.ForeColor = System.Drawing.Color.Silver;
-            this.label_Copyright.Location = new System.Drawing.Point(157, 356);
+            this.label_Copyright.Location = new System.Drawing.Point(3, 350);
             this.label_Copyright.Name = "label_Copyright";
-            this.label_Copyright.Size = new System.Drawing.Size(273, 16);
+            this.label_Copyright.Size = new System.Drawing.Size(580, 16);
             this.label_Copyright.TabIndex = 18;
             this.label_Copyright.Text = "Copyright © 2015 Jiangxi Pioneer. All Rights Reserved.";
             this.label_Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,13 +240,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label_Copyright);
-            this.Controls.Add(this.panel_CheckType);
             this.Controls.Add(this.panel_RoleType);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox_User);
-            this.Controls.Add(this.label_Hint);
+            this.Controls.Add(this.textBox_UserNumber);
             this.Controls.Add(this.textBox_Pwd);
+            this.Controls.Add(this.panel_CheckType);
+            this.Controls.Add(this.label_Description);
             this.Controls.Add(this.label_ProgramName);
             this.Name = "LoginControl";
             this.Size = new System.Drawing.Size(586, 380);
@@ -257,12 +261,12 @@
 
         private System.Windows.Forms.Label label_ProgramName;
         private System.Windows.Forms.TextBox textBox_Pwd;
-        private System.Windows.Forms.Label label_Hint;
+        private System.Windows.Forms.Label label_Description;
         private System.Windows.Forms.Label label_Operator;
         private System.Windows.Forms.Label label_Holder;
         private System.Windows.Forms.Label label_Admin;
         private System.Windows.Forms.Label label_Password;
-        private System.Windows.Forms.TextBox textBox_User;
+        private System.Windows.Forms.TextBox textBox_UserNumber;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_Fingerprint;

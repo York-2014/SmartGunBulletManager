@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SmartGunBulletManager.UserControls
+namespace SmartGunBulletManager.UI.UserControls
 {
     public partial class MainFrame : BasePanel
     {

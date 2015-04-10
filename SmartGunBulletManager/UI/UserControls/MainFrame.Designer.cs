@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager.UserControls
+﻿namespace SmartGunBulletManager.UI.UserControls
 {
     partial class MainFrame
     {
@@ -41,7 +41,7 @@
             this.label_SystemName = new System.Windows.Forms.Label();
             this.pictureBox_Top = new System.Windows.Forms.PictureBox();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.bodyContent_Main = new SmartGunBulletManager.UserControls.Dashboard();
+            this.bodyContent_Main = new SmartGunBulletManager.UI.UserControls.Dashboard();
             this.panel_MiddleStateBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();

@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager.Forms
+﻿namespace SmartGunBulletManager.UI.Forms
 {
     partial class MainForm
     {
@@ -31,22 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timer_UpdateUI = new System.Windows.Forms.Timer(this.components);
-            this.main1 = new SmartGunBulletManager.UserControls.MainFrame();
-            this.loginControl1 = new SmartGunBulletManager.UserControls.LoginControl();
+            this.mainFrame1 = new SmartGunBulletManager.UI.UserControls.MainFrame();
+            this.loginControl1 = new SmartGunBulletManager.UI.UserControls.LoginControl();
             this.SuspendLayout();
             // 
             // timer_UpdateUI
             // 
             this.timer_UpdateUI.Tick += new System.EventHandler(this.timer_UpdateUI_Tick);
             // 
-            // main1
+            // mainFrame1
             // 
-            this.main1.BackColor = System.Drawing.Color.Transparent;
-            this.main1.Location = new System.Drawing.Point(0, 0);
-            this.main1.Name = "main1";
-            this.main1.Size = new System.Drawing.Size(1024, 768);
-            this.main1.TabIndex = 0;
-            this.main1.Visible = false;
+            this.mainFrame1.BackColor = System.Drawing.Color.Transparent;
+            this.mainFrame1.Enabled = false;
+            this.mainFrame1.Location = new System.Drawing.Point(0, 0);
+            this.mainFrame1.Name = "mainFrame1";
+            this.mainFrame1.Size = new System.Drawing.Size(1024, 768);
+            this.mainFrame1.TabIndex = 0;
+            this.mainFrame1.Visible = false;
             // 
             // loginControl1
             // 
@@ -65,7 +66,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.loginControl1);
-            this.Controls.Add(this.main1);
+            this.Controls.Add(this.mainFrame1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -77,7 +78,7 @@
 
         #endregion
 
-        private UserControls.MainFrame main1;
+        private UserControls.MainFrame mainFrame1;
         private System.Windows.Forms.Timer timer_UpdateUI;
         private UserControls.LoginControl loginControl1;
 

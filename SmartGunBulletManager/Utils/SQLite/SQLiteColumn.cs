@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SmartGunBulletManager.Utils
+namespace SmartGunBulletManager.Utils.SQLite
 {
     public class SQLiteColumn
     {

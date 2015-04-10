@@ -1,4 +1,4 @@
-﻿namespace SmartGunBulletManager.UserControls
+﻿namespace SmartGunBulletManager.UI.UserControls
 {
     partial class BlockButton
     {

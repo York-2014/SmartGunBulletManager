@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Data;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
@@ -106,6 +107,28 @@ namespace SmartGunBulletManager.Utils
             {
                 return false;
             }
+        }
+        #endregion
+
+        #region 字符串与Base64String互转
+        /// <summary>
+        /// 字符串转Base64String
+        /// </summary>
+        /// <param name="strString"></param>
+        /// <returns></returns>
+        public static string StringToBase64String(string strString)
+        {
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(strString));
+        }
+
+        /// <summary>
+        /// Base64String转字符串
+        /// </summary>
+        /// <param name="base64String"></param>
+        /// <returns></returns>
+        public static string Base64StringToString(string base64String)
+        {
+            return Encoding.UTF8.GetString(Convert.FromBase64String(base64String));
         }
         #endregion
     }

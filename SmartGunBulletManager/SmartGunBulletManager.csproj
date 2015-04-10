@@ -69,71 +69,77 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AppSettings.cs" />
+    <Compile Include="BLL\MyMessageBox.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\AppSettings.cs" />
+    <Compile Include="DAL\MyMessageBox.cs" />
+    <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="IDAL\IAppSettings.cs" />
+    <Compile Include="IDAL\IMyMessageBox.cs" />
     <Compile Include="Utils\Config.cs" />
     <Compile Include="DAL\User.cs" />
     <Compile Include="IDAL\IUser.cs" />
-    <Compile Include="Utils\SQLiteColumn.cs" />
-    <Compile Include="Utils\SQLiteColumnList.cs" />
-    <Compile Include="Utils\SQLiteHelper.cs" />
+    <Compile Include="Utils\DataTableUtility.cs" />
+    <Compile Include="Utils\RSA.cs" />
+    <Compile Include="Utils\SQLite\SQLiteColumn.cs" />
+    <Compile Include="Utils\SQLite\SQLiteColumnList.cs" />
+    <Compile Include="Utils\SQLite\SQLiteHelper.cs" />
     <Compile Include="Utils\Common.cs" />
     <Compile Include="IDAL\ILogger.cs" />
     <Compile Include="BLL\LockController.cs" />
     <Compile Include="DAL\Logger.cs" />
     <Compile Include="Utils\JsonRequest.cs" />
     <Compile Include="BLL\LogHelper.cs" />
-    <Compile Include="Utils\SQLiteTable.cs" />
+    <Compile Include="Utils\SQLite\SQLiteTable.cs" />
     <Compile Include="Utils\XmlHelper.cs" />
-    <Compile Include="UserControls\BasePanel.cs">
+    <Compile Include="UI\UserControls\BasePanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="UI\Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
+    <Compile Include="UI\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\BlockButton.cs">
+    <Compile Include="UI\UserControls\BlockButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\BlockButton.Designer.cs">
+    <Compile Include="UI\UserControls\BlockButton.Designer.cs">
       <DependentUpon>BlockButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Dashboard.cs">
+    <Compile Include="UI\UserControls\Dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Dashboard.Designer.cs">
+    <Compile Include="UI\UserControls\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\LoginControl.cs">
+    <Compile Include="UI\UserControls\LoginControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\LoginControl.Designer.cs">
+    <Compile Include="UI\UserControls\LoginControl.Designer.cs">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\MainFrame.cs">
+    <Compile Include="UI\UserControls\MainFrame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\MainFrame.Designer.cs">
+    <Compile Include="UI\UserControls\MainFrame.Designer.cs">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\MainForm.resx">
+    <EmbeddedResource Include="UI\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\BlockButton.resx">
+    <EmbeddedResource Include="UI\UserControls\BlockButton.resx">
       <DependentUpon>BlockButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Dashboard.resx">
+    <EmbeddedResource Include="UI\UserControls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\LoginControl.resx">
+    <EmbeddedResource Include="UI\UserControls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\MainFrame.resx">
+    <EmbeddedResource Include="UI\UserControls\MainFrame.resx">
       <DependentUpon>MainFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

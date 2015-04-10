@@ -1,4 +1,4 @@
-﻿using SmartGunBulletManager.Forms;
+﻿using SmartGunBulletManager.UI.Forms;
 using System;
 using System.Windows.Forms;
 

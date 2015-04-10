@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Threading;
 using SmartGunBulletManager.BLL;
 
-namespace SmartGunBulletManager.UserControls
+namespace SmartGunBulletManager.UI.UserControls
 {
     public partial class Dashboard : BasePanel
     {
@@ -44,11 +44,16 @@ namespace SmartGunBulletManager.UserControls
         private void blockButton_BackGun_Click(object sender, EventArgs e)
         {
             lockControl.SendOpenLockCommand(2);
-            Thread.Sleep(100);
+            Thread.Sleep(50);
             lockControl.SendOpenLockCommand(3);
-            Thread.Sleep(100);
+            Thread.Sleep(50);
             lockControl.SendOpenLockCommand(4);
         }
         #endregion
+
+        private void pictureBox_LockScreen_Click(object sender, EventArgs e)
+        {
+            GetMainForm().UnLockUI(false);
+        }
     }
 }

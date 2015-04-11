@@ -26,5 +26,13 @@ namespace SmartGunBulletManager.Utils
                 }
             }
         }
+
+        public static readonly string soundFile_Welcome = @".\Sound\welcome.mp3";
+        public static readonly string soundFile_Waiting = @".\Sound\waiting.mp3";
+        public static readonly string soundFile_InputAgain = @".\Sound\please input again.mp3";
+        public static readonly string soundFile_InputPwd = @".\Sound\please input your password.mp3";
+        public static readonly string soundFile_SelectOptions = @".\Sound\please select options.mp3";
+        public static readonly string soundFile_UserNameLogin = @".\Sound\username login please click the button below.mp3";
+        public static readonly string soundFile_PresonalizeSettings = @".\Sound\you have access to a personal set interface, in here, you can personalize settings.mp3";
     }
 }

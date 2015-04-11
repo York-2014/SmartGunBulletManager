@@ -38,6 +38,7 @@ namespace SmartGunBulletManager.UI.UserControls
 
         private void ChangeColorBySelectedRole(Label lbl_SelectedRole)
         {
+            GetMainForm().DisplayScreenKeyboard(false);
             foreach (Label lbl in panel_RoleType.Controls)
             {
                 if (lbl == lbl_SelectedRole)
@@ -68,6 +69,7 @@ namespace SmartGunBulletManager.UI.UserControls
         /// <param name="e"></param>
         private void label_Fingerprint_MouseUp(object sender, MouseEventArgs e)
         {
+            label_Fingerprint.Enabled = false;
             if (true == Convert.ToBoolean(((Label)sender).Tag))
             {
                 ChangeColorByMouseUp((Label)sender);
@@ -79,6 +81,7 @@ namespace SmartGunBulletManager.UI.UserControls
                 ChangeColorByMouseUp((Label)sender);
                 ChangeColorBySelectedCheckType((Label)sender);
             }
+            label_Fingerprint.Enabled = true;
         }
 
         private void label_Password_MouseDown(object sender, MouseEventArgs e)
@@ -88,6 +91,7 @@ namespace SmartGunBulletManager.UI.UserControls
 
         private void label_Password_MouseUp(object sender, MouseEventArgs e)
         {
+            label_Password.Enabled = false;
             if (true == Convert.ToBoolean(((Label)sender).Tag))
             {
                 ChangeColorByMouseUp((Label)sender);
@@ -99,6 +103,7 @@ namespace SmartGunBulletManager.UI.UserControls
                 ChangeColorByMouseUp((Label)sender);
                 ChangeColorBySelectedCheckType((Label)sender);
             }
+            label_Password.Enabled = true;
         }
 
         /// <summary>
@@ -121,12 +126,14 @@ namespace SmartGunBulletManager.UI.UserControls
         /// </summary>
         private void CheckPassword()
         {
+            GetMainForm().DisplayScreenKeyboard(false);
             string strCheckLoginMsg = string.Empty;
             if (string.IsNullOrEmpty(textBox_UserNumber.Text))
             {
                 strCheckLoginMsg = "请输入人员编号！";
                 textBox_UserNumber.Focus();
                 UpdateLoginDescription(string.Format("{0}", strCheckLoginMsg), true);
+                GetMainForm().DisplayScreenKeyboard(true);
                 return;
             }
             if (string.IsNullOrEmpty(textBox_Pwd.Text))
@@ -134,6 +141,8 @@ namespace SmartGunBulletManager.UI.UserControls
                 strCheckLoginMsg = "请输入密码！";
                 textBox_Pwd.Focus();
                 UpdateLoginDescription(string.Format("{0}", strCheckLoginMsg), true);
+                GetMainForm().PlaySound(Utils.Config.soundFile_InputPwd);
+                GetMainForm().DisplayScreenKeyboard(true);
                 return;
             }
             UpdateLoginDescription("正在登录...", false);
@@ -153,7 +162,8 @@ namespace SmartGunBulletManager.UI.UserControls
         /// </summary>
         private void CheckFingerprint()
         {
-            //TODO::验证指纹
+            GetMainForm().DisplayScreenKeyboard(false);
+            //TODO::验证指纹            
             object fingerprintInfo = null;
             string strCheckLoginMsg = string.Empty;
             if (string.IsNullOrEmpty(textBox_UserNumber.Text))
@@ -161,6 +171,7 @@ namespace SmartGunBulletManager.UI.UserControls
                 strCheckLoginMsg = "请输入人员编号！";
                 textBox_UserNumber.Focus();
                 UpdateLoginDescription(string.Format("{0}", strCheckLoginMsg), true);
+                GetMainForm().DisplayScreenKeyboard(true);
                 return;
             }
             if (null == fingerprintInfo)
@@ -203,6 +214,7 @@ namespace SmartGunBulletManager.UI.UserControls
 
         private void ChangeColorBySelectedCheckType(Label lbl_SelectedCheckType)
         {
+            GetMainForm().DisplayScreenKeyboard(false);
             foreach (Label lbl in panel_CheckType.Controls)
             {
                 if (lbl == lbl_SelectedCheckType)
@@ -225,7 +237,7 @@ namespace SmartGunBulletManager.UI.UserControls
         {
             this.label_Description.Text = "请选择您的身份进入系统！";
             ChangeColorBySelectedRole(label_Operator);
-            ChangeColorBySelectedCheckType(label_Password);            
+            ChangeColorBySelectedCheckType(label_Password);
             this.textBox_UserNumber.Clear();
             this.textBox_Pwd.Clear();
         }
@@ -240,6 +252,26 @@ namespace SmartGunBulletManager.UI.UserControls
             else
             {
                 label_ProgramName.Location = new Point(this.Width, label_ProgramName.Location.Y);
+            }
+        }
+
+        private void ShowScreenKeyboardByClieck(object sender, EventArgs e)
+        {
+            GetMainForm().DisplayScreenKeyboard(true);
+        }
+
+        private void KeyUpToLogin(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                if (Convert.ToBoolean(label_Fingerprint.Tag))
+                {
+                    CheckFingerprint();
+                }
+                else
+                {
+                    CheckPassword();
+                }
             }
         }
     }

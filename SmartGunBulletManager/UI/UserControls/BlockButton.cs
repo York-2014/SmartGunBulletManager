@@ -68,10 +68,6 @@ namespace SmartGunBulletManager.UI.UserControls
         private void BlockButton_MouseUp(object sender, MouseEventArgs e)
         {
             this.BackColor = btnBackColor;
-        }
-
-        private void BlockButton_Click(object sender, EventArgs e)
-        {
             this.OnBlockClick(e);
         }
         #endregion

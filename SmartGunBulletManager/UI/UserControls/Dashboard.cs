@@ -55,5 +55,13 @@ namespace SmartGunBulletManager.UI.UserControls
         {
             GetMainForm().UnLockUI(false);
         }
+
+        private void blockButton_Exit_BlockClick(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBoxHelper.messageboxhelper.ShowWarningMsg("确定要退出吗？"))
+            {
+                Application.Exit();
+            }
+        }
     }
 }

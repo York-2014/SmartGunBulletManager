@@ -39,7 +39,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -56,6 +56,8 @@
     <Reference Include="System.Data.SQLite, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dll\x86\System.Data.SQLite.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
@@ -69,13 +71,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AppSettings.cs" />
-    <Compile Include="BLL\MyMessageBox.cs" />
+    <Compile Include="BLL\MessageBoxHelper.cs" />
+    <Compile Include="BLL\PlaySound.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\AppSettings.cs" />
-    <Compile Include="DAL\MyMessageBox.cs" />
+    <Compile Include="DAL\MessageBoxHelper.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="IDAL\IAppSettings.cs" />
-    <Compile Include="IDAL\IMyMessageBox.cs" />
+    <Compile Include="IDAL\IMessageBoxHelper.cs" />
+    <Compile Include="UI\UserControls\KeyboardButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\KeyboardButton.Designer.cs">
+      <DependentUpon>KeyboardButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\ScreenKeyboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\ScreenKeyboard.Designer.cs">
+      <DependentUpon>ScreenKeyboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Config.cs" />
     <Compile Include="DAL\User.cs" />
     <Compile Include="IDAL\IUser.cs" />
@@ -127,6 +142,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Sound\welcome.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\you have access to a personal set interface, in here, you can personalize settings.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\username login please click the button below.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\please input again.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\waiting.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\please input your password.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sound\please select options.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="UI\Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserControls\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\KeyboardButton.resx">
+      <DependentUpon>KeyboardButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserControls\ScreenKeyboard.resx">
+      <DependentUpon>ScreenKeyboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserControls\LoginControl.resx">
       <DependentUpon>LoginControl.cs</DependentUpon>
@@ -188,6 +230,16 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,11 +1,30 @@
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\SmartGunBulletManager.exe
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\SmartGunBulletManager.pdb
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MainForm.resources
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.BlockButton.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.Properties.Resources.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.csproj.GenerateResource.Cache
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.exe
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.pdb
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.LoginControl.resources
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.Dashboard.resources
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.MyControls.MainFrame.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\Interop.WMPLib.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\AxInterop.WMPLib.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.csproj.ResolveComReference.cache
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\welcome.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\you have access to a personal set interface, in here, you can personalize settings.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\username login please click the button below.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\please input again.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\waiting.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\please input your password.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Sound\please select options.mp3
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Settings.config
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\DB\gbsmart.db
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Newtonsoft.Json.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Interop.WMPLib.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\AxInterop.WMPLib.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.Forms.MainForm.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.BlockButton.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.Dashboard.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.KeyboardButton.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.ScreenKeyboard.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.LoginControl.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.MainFrame.resources
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\System.Data.SQLite.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.csprojResolveAssemblyReference.cache

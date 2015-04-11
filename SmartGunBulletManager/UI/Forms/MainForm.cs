@@ -2,6 +2,7 @@
 using SmartGunBulletManager.Entity;
 using System;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SmartGunBulletManager.UI.Forms
@@ -9,6 +10,7 @@ namespace SmartGunBulletManager.UI.Forms
     public partial class MainForm : Form
     {
         public User.RoleType currentUserType = User.RoleType.Operator;//默认值班员权限登录
+        public UserEntity currentUserEntity = new UserEntity();
 
         public MainForm()
         {
@@ -27,9 +29,18 @@ namespace SmartGunBulletManager.UI.Forms
 
         private void Init()
         {
+            InitPlayer();
             timer_UpdateUI.Interval = 100;
             timer_UpdateUI.Enabled = true;
-            this.TopMost = true;
+            //this.TopMost = true;
+        }
+
+        private void InitPlayer()
+        {
+            this.axWindowsMediaPlayer1.settings.setMode("loop", false);
+            this.axWindowsMediaPlayer1.settings.volume = 100;
+            //PlaySound(Utils.Config.soundFile_Welcome);
+            PlaySound(Utils.Config.soundFile_SelectOptions);
         }
 
         /// <summary>
@@ -48,7 +59,7 @@ namespace SmartGunBulletManager.UI.Forms
             }
             catch
             {
-                BLL.MyMessageBox.mymessagebox.Error("本地数据库密码验证失败！");
+                BLL.MessageBoxHelper.messageboxhelper.ShowErrorMsg("本地数据库密码验证失败！");
             }
         }
 
@@ -64,7 +75,8 @@ namespace SmartGunBulletManager.UI.Forms
             bool result = false;
             UserEntity userEntity = BLL.User.dbuser.CheckLoginByPwd(currentUserType, userNumber, pwd);
             if (null != userEntity)
-            {                
+            {
+                currentUserEntity = userEntity;
                 result = true;
                 strMessage = string.Format("人员编号：{0}\r\n密码：{1}", userNumber, pwd);
                 UnLockUI(true);
@@ -89,6 +101,7 @@ namespace SmartGunBulletManager.UI.Forms
             UserEntity userEntity = BLL.User.dbuser.CheckLoginByFingerprint(currentUserType, userNumber, fingerprintInfo);
             if (null != userEntity)
             {
+                currentUserEntity = userEntity;
                 result = true;
                 strMessage = string.Format("人员编号：{0}\r\n指纹验证成功！", userNumber);
                 UnLockUI(true);
@@ -114,21 +127,49 @@ namespace SmartGunBulletManager.UI.Forms
         /// <param name="login"></param>
         public void UnLockUI(bool open)
         {
+            DisplayScreenKeyboard(false);
             if (open)
             {
                 loginControl1.Enabled = false;
-                loginControl1.Hide();
+                loginControl1.Hide();                
+                mainFrame1.UpdateCurrentUserName(currentUserEntity.fullname);
                 mainFrame1.Enabled = true;
                 mainFrame1.Show();
+                PlaySound(Utils.Config.soundFile_PresonalizeSettings);
             }
             else
             {
+                PlaySound(Utils.Config.soundFile_SelectOptions);
                 mainFrame1.Enabled = false;
                 mainFrame1.Hide();
                 loginControl1.Clear();
                 loginControl1.Enabled = true;
                 loginControl1.Show();
             }
+        }
+
+        /// <summary>
+        /// 显示屏幕键盘
+        /// </summary>
+        /// <param name="display"></param>
+        public void DisplayScreenKeyboard(bool display)
+        {
+            if (display)
+            {
+                this.screenKeyboard1.Show();
+                this.screenKeyboard1.BringToFront();
+            }
+            else
+            {
+                this.screenKeyboard1.Hide();
+            }
+        }
+
+        public void PlaySound(string strMp3Url)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            axWindowsMediaPlayer1.URL = strMp3Url;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
     }
 }

@@ -253,6 +253,7 @@
             this.blockButton_Exit.Name = "blockButton_Exit";
             this.blockButton_Exit.Size = new System.Drawing.Size(240, 100);
             this.blockButton_Exit.TabIndex = 32;
+            this.blockButton_Exit.BlockClick += new SmartGunBulletManager.UI.UserControls.BlockButton.EventHandler(this.blockButton_Exit_BlockClick);
             // 
             // blockButton_Help
             // 

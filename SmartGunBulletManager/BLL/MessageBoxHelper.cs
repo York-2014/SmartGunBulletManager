@@ -6,8 +6,8 @@ using System.Text;
 
 namespace SmartGunBulletManager.BLL
 {
-    public class MyMessageBox
+    public class MessageBoxHelper
     {
-        public static readonly IMyMessageBox mymessagebox = new DAL.MyMessageBox();
+        public static readonly IMessageBoxHelper messageboxhelper = new DAL.MessageBoxHelper();
     }
 }

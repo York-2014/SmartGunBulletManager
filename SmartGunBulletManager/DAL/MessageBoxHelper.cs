@@ -3,54 +3,54 @@ using System.Windows.Forms;
 
 namespace SmartGunBulletManager.DAL
 {
-    public class MyMessageBox : IMyMessageBox
+    public class MessageBoxHelper : IMessageBoxHelper
     {
-        public DialogResult Info(string message)
+        public DialogResult ShowInfoMsg(string message)
         {
             return MessageBox.Show(message, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public DialogResult Info(string message, string title)
+        public DialogResult ShowInfoMsg(string message, string title)
         {
             return MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public DialogResult Warning(string message)
+        public DialogResult ShowWarningMsg(string message)
         {
             return MessageBox.Show(message, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
-        public DialogResult Warning(string message, string title)
+        public DialogResult ShowWarningMsg(string message, string title)
         {
             return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
         }
 
-        public DialogResult Error(string message)
+        public DialogResult ShowErrorMsg(string message)
         {
             return MessageBox.Show(message, "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
         }
 
-        public DialogResult Error(string message, MessageBoxButtons buttons)
+        public DialogResult ShowErrorMsg(string message, MessageBoxButtons buttons)
         {
             return MessageBox.Show(message, "Error", buttons, MessageBoxIcon.Error);
         }
 
-        public DialogResult Error(string message, string title)
+        public DialogResult ShowErrorMsg(string message, string title)
         {
             return MessageBox.Show(message, title, MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
         }
 
-        public DialogResult Error(string message, string title, MessageBoxButtons buttons)
+        public DialogResult ShowErrorMsg(string message, string title, MessageBoxButtons buttons)
         {
             return MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
         }
 
-        public DialogResult Exception(string message)
+        public DialogResult ShowExceptionMsg(string message)
         {
             return MessageBox.Show(message, "Exception", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
         }
 
-        public DialogResult Exception(string message, string title)
+        public DialogResult ShowExceptionMsg(string message, string title)
         {
             return MessageBox.Show(message, title, MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Information);
         }

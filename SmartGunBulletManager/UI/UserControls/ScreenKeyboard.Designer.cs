@@ -273,7 +273,7 @@
             this.keyboardButton_Hide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.keyboardButton_Hide.KeyFont = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.keyboardButton_Hide.KeyValue = "X";
-            this.keyboardButton_Hide.Location = new System.Drawing.Point(237, 3);
+            this.keyboardButton_Hide.Location = new System.Drawing.Point(235, 3);
             this.keyboardButton_Hide.Name = "keyboardButton_Hide";
             this.keyboardButton_Hide.Size = new System.Drawing.Size(38, 30);
             this.keyboardButton_Hide.TabIndex = 17;

@@ -37,3 +37,4 @@ F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\Inte
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\AxInterop.WMPLib.dll
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\SmartGunBulletManager.csproj.ResolveComReference.cache
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\System.Data.SQLite.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\SmartGunBulletManager.csprojResolveAssemblyReference.cache

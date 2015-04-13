@@ -9,12 +9,13 @@ namespace SmartGunBulletManager.UI.UserControls
             InitializeComponent();
         }
 
-        public void UpdateDateTime()
+        public void UpdateAllStatusDisplay()
         {
-            this.label_DateTime.Text = string.Format("当前时间：{0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            this.label_DateTime.Text = string.Format("当前时间：{0}", GetMainForm().GetCurrentTimeString("yyyy-MM-dd HH:mm:ss"));
+            this.Dashboard1.UpdateAllStatusDisplay();
         }
 
-        public void UpdateCurrentUserName(string userName)
+        public void SetCurrentUserName(string userName)
         {
             this.label_Operator.Text = string.Format("当前用户：{0}", userName);
         }

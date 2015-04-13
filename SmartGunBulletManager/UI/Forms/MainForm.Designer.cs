@@ -31,26 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.timer_UpdateUI = new System.Windows.Forms.Timer(this.components);
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.screenKeyboard1 = new SmartGunBulletManager.UI.UserControls.ScreenKeyboard();
             this.loginControl1 = new SmartGunBulletManager.UI.UserControls.LoginControl();
             this.mainFrame1 = new SmartGunBulletManager.UI.UserControls.MainFrame();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer_UpdateUI
             // 
+            this.timer_UpdateUI.Enabled = true;
             this.timer_UpdateUI.Tick += new System.EventHandler(this.timer_UpdateUI_Tick);
-            // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(10, 10);
-            this.axWindowsMediaPlayer1.TabIndex = 3;
-            this.axWindowsMediaPlayer1.Visible = false;
             // 
             // screenKeyboard1
             // 
@@ -81,12 +72,22 @@
             this.mainFrame1.TabIndex = 0;
             this.mainFrame1.Visible = false;
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(0, 0);
+            this.axWindowsMediaPlayer1.TabIndex = 3;
+            this.axWindowsMediaPlayer1.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::SmartGunBulletManager.Properties.Resources.htbj;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.axWindowsMediaPlayer1);
@@ -110,7 +111,6 @@
         private UserControls.LoginControl loginControl1;
         private UserControls.ScreenKeyboard screenKeyboard1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
-
     }
 }
 

@@ -233,8 +233,12 @@ namespace SmartGunBulletManager.Utils
 
         internal String ReadResponseFromError(WebException error)
         {
-            using (var streamReader = new StreamReader(error.Response.GetResponseStream()))
-                return streamReader.ReadToEnd();
+            if (error.Response != null)
+            {
+                using (var streamReader = new StreamReader(error.Response.GetResponseStream()))
+                    return streamReader.ReadToEnd();
+            }
+            return string.Empty;
         }
 
         internal static string EncodeCredentials(Credentials credentials)

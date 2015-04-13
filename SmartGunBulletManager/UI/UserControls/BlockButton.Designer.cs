@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlockButton));
             this.label_Description = new System.Windows.Forms.Label();
             this.pictureBox_Icon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Icon)).BeginInit();
@@ -53,7 +52,7 @@
             // 
             this.pictureBox_Icon.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_Icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_Icon.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_Icon.Image")));
+            this.pictureBox_Icon.Image = global::SmartGunBulletManager.Properties.Resources.find_32;
             this.pictureBox_Icon.Location = new System.Drawing.Point(176, 34);
             this.pictureBox_Icon.Name = "pictureBox_Icon";
             this.pictureBox_Icon.Size = new System.Drawing.Size(32, 32);

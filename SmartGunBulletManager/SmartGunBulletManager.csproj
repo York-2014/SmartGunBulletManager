@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AppSettings.cs" />
+    <Compile Include="BLL\Enums.cs" />
+    <Compile Include="BLL\JsonRequest.cs" />
     <Compile Include="BLL\MessageBoxHelper.cs" />
     <Compile Include="BLL\PlaySound.cs" />
     <Compile Include="BLL\User.cs" />
@@ -79,6 +81,9 @@
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="IDAL\IAppSettings.cs" />
     <Compile Include="IDAL\IMessageBoxHelper.cs" />
+    <Compile Include="UI\Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\UserControls\KeyboardButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -192,6 +197,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="Settings.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -239,6 +245,15 @@
       <Lcid>0</Lcid>
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

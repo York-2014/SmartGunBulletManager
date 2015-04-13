@@ -53,7 +53,7 @@ namespace SmartGunBulletManager.UI.UserControls
 
         private void pictureBox_LockScreen_Click(object sender, EventArgs e)
         {
-            GetMainForm().UnLockUI(false);
+            GetMainForm().SwitchToMainUI(false);
         }
 
         private void blockButton_Exit_BlockClick(object sender, EventArgs e)
@@ -62,6 +62,40 @@ namespace SmartGunBulletManager.UI.UserControls
             {
                 Application.Exit();
             }
+        }
+
+        public void UpdateAllStatusDisplay()
+        {
+            label_Temperature.Text = string.Format("温度：{0} ℃", GetMainForm().Temperature);
+            label_Humidity.Text = string.Format("湿度：{0} %RH", GetMainForm().Humidity);
+            label_AlcoholConcentration.Text = string.Format("酒精浓度：{0} mg/100ml", GetMainForm().AlcoholConcentration);
+            if (GetMainForm().PowerState == Enums.PowerStatusType.Normal)
+            {
+                pictureBox_PowerState.Image = global::SmartGunBulletManager.Properties.Resources.Power_Normal_32;
+            }
+            else
+            {
+                pictureBox_PowerState.Image = global::SmartGunBulletManager.Properties.Resources.Power_Battery_32;
+            }
+
+            if (GetMainForm().NetworkState == Enums.NetworkStatusType.Connected)
+            {
+                pictureBox_NetworkState.Image = global::SmartGunBulletManager.Properties.Resources.Network_Connected_32;
+            }
+            else
+            {
+                pictureBox_NetworkState.Image = global::SmartGunBulletManager.Properties.Resources.Network_Disconnect_32;
+            }
+
+            if (GetMainForm().ServerState == Enums.ServerStatusType.Online)
+            {
+                pictureBox_ServerState.Image = global::SmartGunBulletManager.Properties.Resources.Server_Online_32;
+            }
+            else
+            {
+                pictureBox_ServerState.Image = global::SmartGunBulletManager.Properties.Resources.Server_Offline_32;
+            }
+
         }
     }
 }

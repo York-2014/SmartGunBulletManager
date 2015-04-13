@@ -34,5 +34,12 @@ namespace SmartGunBulletManager.Utils
         public static readonly string soundFile_SelectOptions = @".\Sound\please select options.mp3";
         public static readonly string soundFile_UserNameLogin = @".\Sound\username login please click the button below.mp3";
         public static readonly string soundFile_PresonalizeSettings = @".\Sound\you have access to a personal set interface, in here, you can personalize settings.mp3";
+
+        public static int CheckTemperatureInterval { get; set; }
+        public static int CheckHumidityInterval { get; set; }
+        public static int CheckAlcoholConcentrationInterval { get; set; }
+        public static int CheckPowerStateInterval { get; set; }
+        public static int CheckNetworkStateInterval { get; set; }
+        public static int CheckServerStateInterval { get; set; }
     }
 }

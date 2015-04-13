@@ -11,7 +11,7 @@ namespace SmartGunBulletManager.DAL
         public T LoadConfig<T>(string strConfigName)
         {
             T result = default(T);
-            result = (T)(object)Utils.XmlHelper.Read(Utils.Config.SettingsXmlPath, "/configuration/" + strConfigName, "value");
+            result = (T)Utils.Common.ConvertToT<T>(Utils.XmlHelper.Read(Utils.Config.SettingsXmlPath, "/configuration/" + strConfigName, "value"), default(T));
             return result;
         }
     }

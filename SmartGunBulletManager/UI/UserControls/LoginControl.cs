@@ -11,16 +11,20 @@ namespace SmartGunBulletManager.UI.UserControls
         public LoginControl()
         {
             InitializeComponent();
-            //Init();
+
         }
 
-        private void Init()
+        private void LoginControl_Load(object sender, EventArgs e)
         {
-            timer_UpdateUI.Interval = 5;
-            timer_UpdateUI.Enabled = true;
+            Init();
         }
 
-        #region 角色类型切换
+        public void Init()
+        {
+            Clear();
+            GetMainForm().PlaySound(Utils.Config.soundFile_SelectOptions);
+        }
+
         private void label_Operator_Click(object sender, EventArgs e)
         {
             ChangeColorBySelectedRole((Label)sender);
@@ -54,9 +58,7 @@ namespace SmartGunBulletManager.UI.UserControls
             }
             GetMainForm().currentUserType = (BLL.User.RoleType)Enum.Parse(typeof(BLL.User.RoleType), lbl_SelectedRole.Tag.ToString());
         }
-        #endregion
 
-        #region 验证类型切换
         private void label_Fingerprint_MouseDown(object sender, MouseEventArgs e)
         {
             ChangeColorByMouseDown((Label)sender);
@@ -163,7 +165,7 @@ namespace SmartGunBulletManager.UI.UserControls
         private void CheckFingerprint()
         {
             GetMainForm().DisplayScreenKeyboard(false);
-            //TODO::验证指纹            
+            //TODO: 验证指纹            
             object fingerprintInfo = null;
             string strCheckLoginMsg = string.Empty;
             if (string.IsNullOrEmpty(textBox_UserNumber.Text))
@@ -231,28 +233,14 @@ namespace SmartGunBulletManager.UI.UserControls
                 }
             }
         }
-        #endregion
 
-        public void Clear()
+        private void Clear()
         {
             this.label_Description.Text = "请选择您的身份进入系统！";
             ChangeColorBySelectedRole(label_Operator);
             ChangeColorBySelectedCheckType(label_Password);
             this.textBox_UserNumber.Clear();
             this.textBox_Pwd.Clear();
-        }
-
-
-        private void timer_UpdateUI_Tick(object sender, EventArgs e)
-        {
-            if (label_ProgramName.Location.X > -label_ProgramName.Width)
-            {
-                label_ProgramName.Location = new Point(label_ProgramName.Location.X - 1, label_ProgramName.Location.Y);
-            }
-            else
-            {
-                label_ProgramName.Location = new Point(this.Width, label_ProgramName.Location.Y);
-            }
         }
 
         private void ShowScreenKeyboardByClieck(object sender, EventArgs e)
@@ -274,5 +262,20 @@ namespace SmartGunBulletManager.UI.UserControls
                 }
             }
         }
+
+        #region Old Code
+        /*
+        private void timer_UpdateUI_Tick(object sender, EventArgs e)
+        {
+            if (label_ProgramName.Location.X > -label_ProgramName.Width)
+            {
+                label_ProgramName.Location = new Point(label_ProgramName.Location.X - 1, label_ProgramName.Location.Y);
+            }
+            else
+            {
+                label_ProgramName.Location = new Point(this.Width, label_ProgramName.Location.Y);
+            }
+        }*/
+        #endregion
     }
 }

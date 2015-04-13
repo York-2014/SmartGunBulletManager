@@ -76,10 +76,6 @@
             this.label_Admin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_Admin.Click += new System.EventHandler(this.label_Admin_Click);
             // 
-            // timer_UpdateUI
-            // 
-            this.timer_UpdateUI.Tick += new System.EventHandler(this.timer_UpdateUI_Tick);
-            // 
             // panel_RoleType
             // 
             this.panel_RoleType.BackColor = System.Drawing.Color.Transparent;
@@ -255,6 +251,7 @@
             this.Controls.Add(this.textBox_UserNumber);
             this.Name = "LoginControl";
             this.Size = new System.Drawing.Size(586, 380);
+            this.Load += new System.EventHandler(this.LoginControl_Load);
             this.panel_RoleType.ResumeLayout(false);
             this.panel_CheckType.ResumeLayout(false);
             this.ResumeLayout(false);

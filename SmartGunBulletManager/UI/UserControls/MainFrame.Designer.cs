@@ -41,7 +41,7 @@
             this.label_SystemName = new System.Windows.Forms.Label();
             this.pictureBox_Top = new System.Windows.Forms.PictureBox();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.bodyContent_Main = new SmartGunBulletManager.UI.UserControls.Dashboard();
+            this.Dashboard1 = new SmartGunBulletManager.UI.UserControls.Dashboard();
             this.panel_MiddleStateBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -177,19 +177,19 @@
             // panel_Body
             // 
             this.panel_Body.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Body.Controls.Add(this.bodyContent_Main);
+            this.panel_Body.Controls.Add(this.Dashboard1);
             this.panel_Body.Location = new System.Drawing.Point(0, 180);
             this.panel_Body.Name = "panel_Body";
             this.panel_Body.Size = new System.Drawing.Size(1024, 588);
             this.panel_Body.TabIndex = 7;
             // 
-            // bodyContent_Main
+            // Dashboard1
             // 
-            this.bodyContent_Main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(82)))));
-            this.bodyContent_Main.Location = new System.Drawing.Point(12, 15);
-            this.bodyContent_Main.Name = "bodyContent_Main";
-            this.bodyContent_Main.Size = new System.Drawing.Size(1000, 560);
-            this.bodyContent_Main.TabIndex = 5;
+            this.Dashboard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))), ((int)(((byte)(82)))));
+            this.Dashboard1.Location = new System.Drawing.Point(12, 15);
+            this.Dashboard1.Name = "Dashboard1";
+            this.Dashboard1.Size = new System.Drawing.Size(1000, 560);
+            this.Dashboard1.TabIndex = 5;
             // 
             // MainFrame
             // 
@@ -228,6 +228,6 @@
         private System.Windows.Forms.Panel panel_Top;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Body;
-        private Dashboard bodyContent_Main;
+        private Dashboard Dashboard1;
     }
 }

@@ -41,5 +41,8 @@ namespace SmartGunBulletManager.Utils
         public static int CheckPowerStateInterval { get; set; }
         public static int CheckNetworkStateInterval { get; set; }
         public static int CheckServerStateInterval { get; set; }
+
+        public static string LockControllerComm { get; set; }
+        public static int LockControllerBaudRate { get; set; }
     }
 }

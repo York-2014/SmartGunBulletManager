@@ -22,7 +22,7 @@ namespace SmartGunBulletManager.UI.UserControls
         public void Init()
         {
             Clear();
-            GetMainForm().PlaySound(Utils.Config.soundFile_SelectOptions);
+            BLL.Player.player.PlaySound(Utils.Config.soundFile_SelectOptions);
         }
 
         private void label_Operator_Click(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace SmartGunBulletManager.UI.UserControls
                 strCheckLoginMsg = "请输入密码！";
                 textBox_Pwd.Focus();
                 UpdateLoginDescription(string.Format("{0}", strCheckLoginMsg), true);
-                GetMainForm().PlaySound(Utils.Config.soundFile_InputPwd);
+                BLL.Player.player.PlaySound(Utils.Config.soundFile_InputPwd);
                 GetMainForm().DisplayScreenKeyboard(true);
                 return;
             }

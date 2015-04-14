@@ -73,17 +73,18 @@
     <Compile Include="BLL\AppSettings.cs" />
     <Compile Include="BLL\Enums.cs" />
     <Compile Include="BLL\JsonRequest.cs" />
+    <Compile Include="BLL\LockController.cs" />
     <Compile Include="BLL\MessageBoxHelper.cs" />
-    <Compile Include="BLL\PlaySound.cs" />
+    <Compile Include="BLL\Player.cs" />
     <Compile Include="BLL\User.cs" />
     <Compile Include="DAL\AppSettings.cs" />
     <Compile Include="DAL\MessageBoxHelper.cs" />
+    <Compile Include="DAL\Player.cs" />
     <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="IDAL\IAppSettings.cs" />
+    <Compile Include="IDAL\ILockController.cs" />
     <Compile Include="IDAL\IMessageBoxHelper.cs" />
-    <Compile Include="UI\Forms\BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="IDAL\IPlayer.cs" />
     <Compile Include="UI\UserControls\KeyboardButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,7 +107,7 @@
     <Compile Include="Utils\SQLite\SQLiteHelper.cs" />
     <Compile Include="Utils\Common.cs" />
     <Compile Include="IDAL\ILogger.cs" />
-    <Compile Include="BLL\LockController.cs" />
+    <Compile Include="DAL\LockController.cs" />
     <Compile Include="DAL\Logger.cs" />
     <Compile Include="Utils\JsonRequest.cs" />
     <Compile Include="BLL\LogHelper.cs" />
@@ -238,13 +239,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="AxWMPLib">
-      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
-      <VersionMajor>1</VersionMajor>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
       <VersionMinor>0</VersionMinor>
       <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
+      <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
@@ -253,7 +255,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

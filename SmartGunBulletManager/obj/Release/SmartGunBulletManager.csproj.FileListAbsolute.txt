@@ -22,9 +22,3 @@ F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\Sm
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.LoginControl.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.UI.UserControls.MainFrame.resources
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\System.Data.SQLite.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\Interop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Release\AxInterop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\Interop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\AxInterop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.csproj.ResolveComReference.cache
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Release\SmartGunBulletManager.csprojResolveAssemblyReference.cache

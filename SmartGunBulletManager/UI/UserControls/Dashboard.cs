@@ -7,31 +7,17 @@ namespace SmartGunBulletManager.UI.UserControls
 {
     public partial class Dashboard : BasePanel
     {
-        LockController lockControl = null;
-
         public Dashboard()
         {
             InitializeComponent();
-            Init();
         }
-
-        #region 初始化
-        /// <summary>
-        /// 初始化
-        /// </summary>
-        private void Init()
-        {
-            lockControl = new LockController();
-            lockControl.Init("COM3", 9600);
-        }
-        #endregion
 
         #region 控件事件
         private void blockButton_GetGun_Click(object sender, EventArgs e)
         {
             try
             {
-                lockControl.SendOpenLockCommand(1);
+               BLL.LockController.lockController.SendOpenLockCommand(1);
                 MessageBox.Show("取枪成功!", "提示");
             }
             catch (Exception ex)
@@ -43,18 +29,25 @@ namespace SmartGunBulletManager.UI.UserControls
 
         private void blockButton_BackGun_Click(object sender, EventArgs e)
         {
-            lockControl.SendOpenLockCommand(2);
+            BLL.LockController.lockController.SendOpenLockCommand(2);
             Thread.Sleep(50);
-            lockControl.SendOpenLockCommand(3);
+            BLL.LockController.lockController.SendOpenLockCommand(3);
             Thread.Sleep(50);
-            lockControl.SendOpenLockCommand(4);
+            BLL.LockController.lockController.SendOpenLockCommand(4);
         }
         #endregion
 
+        #region 锁屏
+        /// <summary>
+        /// 锁屏
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox_LockScreen_Click(object sender, EventArgs e)
         {
             GetMainForm().SwitchToMainUI(false);
         }
+        #endregion
 
         private void blockButton_Exit_BlockClick(object sender, EventArgs e)
         {

@@ -34,8 +34,6 @@
             this.screenKeyboard1 = new SmartGunBulletManager.UI.UserControls.ScreenKeyboard();
             this.loginControl1 = new SmartGunBulletManager.UI.UserControls.LoginControl();
             this.mainFrame1 = new SmartGunBulletManager.UI.UserControls.MainFrame();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer_UpdateUI
@@ -72,16 +70,6 @@
             this.mainFrame1.TabIndex = 0;
             this.mainFrame1.Visible = false;
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(0, 0);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(0, 0);
-            this.axWindowsMediaPlayer1.TabIndex = 3;
-            this.axWindowsMediaPlayer1.Visible = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -90,7 +78,6 @@
             this.BackgroundImage = global::SmartGunBulletManager.Properties.Resources.htbj;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 768);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.screenKeyboard1);
             this.Controls.Add(this.loginControl1);
             this.Controls.Add(this.mainFrame1);
@@ -99,7 +86,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "智能枪弹柜管理系统";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -110,7 +96,5 @@
         private System.Windows.Forms.Timer timer_UpdateUI;
         private UserControls.LoginControl loginControl1;
         private UserControls.ScreenKeyboard screenKeyboard1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
-

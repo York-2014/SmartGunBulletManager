@@ -1,14 +1,153 @@
 ﻿using SmartGunBulletManager.BLL;
 using SmartGunBulletManager.Entity;
 using System;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace SmartGunBulletManager.UI.Forms
 {
-    public partial class MainForm : BaseForm
+    public partial class MainForm : Form
     {
+
+        #region 获取当前时间字符串
+        /// <summary>
+        /// 获取当前时间字符串
+        /// </summary>
+        public string GetCurrentTimeString(string timeFormat)
+        {
+            return DateTime.Now.ToString(timeFormat);
+        }
+        #endregion
+
+        #region 传感器状态监测
+
+        #region 各传感器属性
+        /// <summary>
+        /// 外部获取或内部设置温度传感器的值.
+        /// </summary>
+        public int Temperature { get; private set; }
+
+        /// <summary>
+        /// 外部获取或内部设置湿度传感器的值.
+        /// </summary>
+        public int Humidity { get; private set; }
+
+        /// <summary>
+        /// 外部获取或内部设置酒精浓度传感器的值.
+        /// </summary>
+        public int AlcoholConcentration { get; private set; }
+
+        /// <summary>
+        /// 外部获取或内部设置电源状态.
+        /// </summary>
+        public Enums.PowerStatusType PowerState { get; private set; }
+
+        /// <summary>
+        /// 外部获取或内部设置网络状态.
+        /// </summary>
+        public Enums.NetworkStatusType NetworkState { get; private set; }
+
+        /// <summary>
+        /// 外部获取或内部设置服务器状态.
+        /// </summary>
+        public Enums.ServerStatusType ServerState { get; private set; }
+        #endregion
+
+        #region 检查并更新温度
+        /// <summary>
+        /// 检查并更新温度
+        /// </summary>
+        public void CheckAndUpdateTemperature()
+        {
+            //TODO: 检查并更新温度
+            Temperature = 10;
+        }
+        #endregion
+
+        #region 检查并更新湿度
+        /// <summary>
+        /// 检查并更新湿度
+        /// </summary>
+        public void CheckAndUpdateHumidity()
+        {
+            //TODO: 检查并更新湿度
+            Humidity = 20;
+        }
+        #endregion
+
+        #region 检查并更新酒精浓度
+        /// <summary>
+        /// 检查并更新酒精浓度
+        /// </summary>
+        public void CheckAndUpdateAlcoholConcentration()
+        {
+            //TODO: 检查并更新酒精浓度
+            AlcoholConcentration = 30;
+        }
+        #endregion
+
+        #region 检查并更新电源类型
+        /// <summary>
+        /// 检查并更新电源类型
+        /// </summary>
+        public void CheckAndUpdatePowerState()
+        {
+            if ("Online" == SystemInformation.PowerStatus.PowerLineStatus.ToString())
+            {
+                PowerState = Enums.PowerStatusType.Normal;
+            }
+            else
+            {
+                PowerState = Enums.PowerStatusType.Battery;
+            }
+        }
+        #endregion
+
+        #region 检查并更新网络连接状态
+        /// <summary>
+        /// 检查并更新网络连接状态
+        /// </summary>
+        public void CheckAndUpdateNetworkState()
+        {
+            if (Utils.Common.LocalConnectionStatus())
+            {
+                NetworkState = Enums.NetworkStatusType.Connected;
+            }
+            else
+            {
+                NetworkState = Enums.NetworkStatusType.Disconnect;
+            }
+        }
+        #endregion
+
+        #region 检查并更新服务器状态
+        /// <summary>
+        /// 检查并更新服务器状态
+        /// </summary>
+        public void CheckAndUpdateServerState()
+        {
+            if (Utils.Common.MyPing("www.baidu.com"))
+            {
+                ServerState = Enums.ServerStatusType.Online;
+            }
+            else
+            {
+                ServerState = Enums.ServerStatusType.Offline;
+            }
+            ////TODO: 检查并更新服务器状态
+            //if (false == string.IsNullOrEmpty(JsonRequest.jsonrequest.Execute("http://www.baidu.com").ToString()))
+            //{
+            //ServerState = Enums.ServerStatusType.Online;
+            //}
+            //else
+            //{
+            //    ServerState = Enums.ServerStatusType.Offline;
+            //}
+        }
+        #endregion
+
+        #endregion
+
         #region 变量
         public User.RoleType currentUserType = User.RoleType.Operator;//默认值班员权限登录
         public UserEntity currentUserEntity = new UserEntity();
@@ -52,6 +191,10 @@ namespace SmartGunBulletManager.UI.Forms
             Utils.Config.CheckPowerStateInterval = BLL.AppSettings.settings.LoadConfig<int>("checkpowerstateinterval");
             Utils.Config.CheckNetworkStateInterval = BLL.AppSettings.settings.LoadConfig<int>("checknetworkstateinterval");
             Utils.Config.CheckServerStateInterval = BLL.AppSettings.settings.LoadConfig<int>("checkserverstateinterval");
+
+            //锁控制板
+            Utils.Config.LockControllerComm = BLL.AppSettings.settings.LoadConfig<string>("lockcontrollercomm");
+            Utils.Config.LockControllerBaudRate = BLL.AppSettings.settings.LoadConfig<int>("lockcontrollerbaudrate");
         }
         #endregion
 
@@ -114,14 +257,7 @@ namespace SmartGunBulletManager.UI.Forms
         private void Init()
         {
             StarCheckStatusTimers();
-            InitPlayer();
-            this.TopMost = true;
-        }
-
-        private void InitPlayer()
-        {
-            axWindowsMediaPlayer1.settings.setMode("loop", false);
-            axWindowsMediaPlayer1.settings.volume = 100;
+            //this.TopMost = true;
         }
         #endregion
 
@@ -194,9 +330,9 @@ namespace SmartGunBulletManager.UI.Forms
         }
         #endregion
 
-        #region 切换到主界面
+        #region 注销或切换到主界面
         /// <summary>
-        /// 切换到主界面
+        /// 注销或切换到主界面
         /// </summary>
         /// <param name="MainUI"></param>
         public void SwitchToMainUI(bool MainUI)
@@ -210,11 +346,11 @@ namespace SmartGunBulletManager.UI.Forms
                 mainFrame1.Show();
                 //切换到主界面执行的事件
                 mainFrame1.SetCurrentUserName(currentUserEntity.fullname);
-                PlaySound(Utils.Config.soundFile_PresonalizeSettings);
+                BLL.Player.player.PlaySound(Utils.Config.soundFile_PresonalizeSettings);
             }
             else
             {
-                PlaySound(Utils.Config.soundFile_SelectOptions);
+                BLL.Player.player.PlaySound(Utils.Config.soundFile_SelectOptions);
                 mainFrame1.Enabled = false;
                 mainFrame1.Hide();
                 loginControl1.Enabled = true;
@@ -241,19 +377,6 @@ namespace SmartGunBulletManager.UI.Forms
             {
                 this.screenKeyboard1.Hide();
             }
-        }
-        #endregion
-
-        #region 播放音频
-        /// <summary>
-        /// 播放音频
-        /// </summary>
-        /// <param name="strMp3Url"></param>
-        public void PlaySound(string strMp3Url)
-        {
-            axWindowsMediaPlayer1.Ctlcontrols.stop();
-            axWindowsMediaPlayer1.URL = strMp3Url;
-            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
         #endregion
     }

@@ -31,9 +31,7 @@ F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\Soun
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\Sound\waiting.mp3
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\Sound\please input your password.mp3
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\Sound\please select options.mp3
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\Interop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\AxInterop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\Interop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\AxInterop.WMPLib.dll
-F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\SmartGunBulletManager.csproj.ResolveComReference.cache
 F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\System.Data.SQLite.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\Interop.WMPLib.dll
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\obj\Debug\SmartGunBulletManager.csproj.ResolveComReference.cache
+F:\公司项目\智能枪弹柜项目\trunk\SmartGunBulletManager\bin\Debug\Interop.WMPLib.dll
